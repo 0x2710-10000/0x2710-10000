@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">sass监视文件自动编译 | 10000&#39;s blog</title>
+  <title itemprop="name">win10多网卡带宽叠加(负载均衡) | 10000&#39;s blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -418,23 +418,23 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200923171034.webp);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200923171034.webp">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102154626.jpeg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102154626.jpeg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      sass监视文件自动编译</h1>
+      win10多网卡带宽叠加(负载均衡)</h1>
       <p class="entry-census">
         <span>
-          <a href="blog.yione.club">
+          <a href="https://blog.yione.club">
             <img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg">
           </a>
         </span>
         <span>
-          <a href="blog.yione.club">10000</a>
+          <a href="https://blog.yione.club">10000</a>
         </span>
         <span class="bull">
         ·</span>
-        2020-9-23<span class="bull">
+        2020-11-2<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -448,22 +448,30 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在学sass的时候朋友告诉我可以用 <code>node-sass</code> 使用 <code>node-sass sass文件路径 输出css文件路径 -w</code> 命令监视文件的变化自动编译文件，但是一直在全局环境下没成功安装上 <code>node-sass</code> 于是就想能不能用<code>npm</code>安装的<code>sass</code>直接监视文件变化，于是就找到了如下命令</p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>你已经通过<code>npm</code> 全局(或在项目中)安装好了 <code>sass</code></p>
-<h2 id="sass编译命令"><a href="#sass编译命令" class="headerlink" title="sass编译命令"></a>sass编译命令</h2><h4 id="sass编译一个文件："><a href="#sass编译一个文件：" class="headerlink" title="sass编译一个文件："></a>sass编译一个文件：</h4><p>命令：<code>sass 源scss文件路径:输出的css文件路径</code></p>
-<p>如：<code>sass main.scss:main.css</code></p>
-<h4 id="sass对一个文件进行监控编译"><a href="#sass对一个文件进行监控编译" class="headerlink" title="sass对一个文件进行监控编译"></a>sass对一个文件进行监控编译</h4><p>命令：<code>sass 源scss文件路径:输出的css文件路径 --watch</code></p>
-<p>如： <code>sass main.scss:main.css --watch</code></p>
-<p>sass将会监视mian.scss文件的变化并实时编译输出到指定位置的指定文件中</p>
-<h4 id="sass对文件夹进行监控编译"><a href="#sass对文件夹进行监控编译" class="headerlink" title="sass对文件夹进行监控编译"></a>sass对<strong>文件夹</strong>进行监控编译</h4><p>命令： <code>sass sass文件夹:css文件夹 --watch</code></p>
-<p>如：<code>sass ./sass:./css --watch</code></p>
-<p>sass将会监视当前目录下scss文件夹下的需要编译成css文件的scss文件并按照目录结构在css目录中生成相应的css文件</p>
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p><strong>亲测编译scss文件时含有中文目录不会报错哦(npm sass 版本： <a href="mailto:&#x73;&#97;&#115;&#115;&#x40;&#x31;&#46;&#50;&#x36;&#46;&#x31;&#x31;">&#x73;&#97;&#115;&#115;&#x40;&#x31;&#46;&#50;&#x36;&#46;&#x31;&#x31;</a>)</strong></p>
-<p>可以在 <code>package.json</code> 中的 <code>scripts</code> 加入类似以下配置</p>
-<pre><code class="json">&quot;scripts&quot;: {
-  &quot;sass&quot;: &quot;sass ./scss:./css --watch&quot;
-}</code></pre>
-<p>随后可以在项目中运行<code>npm run sass</code>  以启动 sass 对文件或目录的监控</p>
+          <h1 id="win10多网卡带宽叠加-负载均衡"><a href="#win10多网卡带宽叠加-负载均衡" class="headerlink" title="win10多网卡带宽叠加(负载均衡)"></a>win10多网卡带宽叠加(负载均衡)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想下个游戏来玩玩，奈何教室有设备限速，于是我想起了以前学会的多网卡负载均衡功能</p>
+<p>利用多网卡负载均衡以达到带宽叠加从而提高网速</p>
+<p>涉及知识：windows命令行命令: <code>route print</code>、跃点数</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>利用 SMB3.0协议的 multichannel 功能实现带宽叠加</p>
+<h2 id="route-print"><a href="#route-print" class="headerlink" title="route print"></a>route print</h2><p><a href="https://baike.baidu.com/item/route%20print/6529402" target="_blank" rel="noopener"><code>route print</code></a> 为查看路由表命令</p>
+<p>在powershell或cmd内输入 <code>route print</code> 命令查看电脑的路由表：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102151308.png" alt="image-20201102151307703"></p>
+<p>可以看到我们当前有两个接口即两张网卡</p>
+<h2 id="跃点数"><a href="#跃点数" class="headerlink" title="跃点数"></a>跃点数</h2><blockquote>
+<p>跃点：即路由。一个路由为一个跃点。传输过程中需要经过多个网络，每个被经过的网络设备点（有能力路由的）叫做一个跃点，地址就是它的ip。跃点数是经过了多少个跃点的累加器，为了防止无用的数据包在网上流散。 为路由指定所需跃点数的整数值（范围是 1 ~ 9999），它用来在路由表里的多个路由中选择与转发包中的目标地址最为匹配的路由。所选的路由具有最少的跃点数。跃点数能够反映跃点的数量、路径的速度、路径可靠性、路径吞吐量以及管理属性。</p>
+</blockquote>
+<p>说的简单点，接口跃点数可以理解为经过这个接口的代价，跃点数越小代价越低</p>
+<p>windows会自动选用跃点数小的接口进行通信</p>
+<p><strong>为了达到负载均衡的目的，我们需要手动设置跃点数使得接口的跃点数相同</strong></p>
+<p>我们在 <code>控制面板</code> -&gt; <code>网络和Internet</code> -&gt; <code>网络连接</code> 中可以看到我们电脑上的网络接口：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102152223.png" alt="image-20201102152223236"></p>
+<p>博主这里连接了宽带和WiFi</p>
+<h3 id="手动设置跃点数"><a href="#手动设置跃点数" class="headerlink" title="手动设置跃点数"></a>手动设置跃点数</h3><p>在需要设置的网络，我们这里以以太网为例：</p>
+<p><code>鼠标右键</code> -&gt; <code>属性</code> -&gt; <code>Internet协议版本4(TCP/IPv4)</code> -&gt; <code>属性</code> -&gt; <code>高级</code> -&gt; <code>取消勾选自动跃点</code> -&gt; <code>输入跃点数</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102153457.png" alt="image-20201102153457276"></p>
+<p>然后使用 <code>route print</code> 命令查看跃点数</p>
+<p>由于每个接口接入的跃点数都不一致，所以需要多次尝试，多网卡同理</p>
+<p><strong>当跃点数一致时，windows会自动进行负载均衡</strong></p>
+<p><strong>不知为何，时间长了会有网卡带宽闲置，需要暂停后继续下载以启用负载均衡</strong></p>
 
         </div>
         <!-- .entry-content -->
@@ -495,15 +503,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2020/10/12/数据劫持中闭包的应用/" rel="prev">
+            <a href="/2020/11/04/css-loader中-的作用/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200815163103.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200815163103.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201104111410.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201104111410.png">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                数据劫持中闭包的应用</h3>
+                css-loader中`~`的作用</h3>
                 <hr>
               </div>
             </a>
@@ -513,15 +521,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2020/08/25/let没有变量提升吗/" rel="next">
+            <a href="/2020/10/22/跨域中的单向通信/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200917105106.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200917105106.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201022155534.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201022155534.webp">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                let没有变量提升吗</h3>
+                跨域中的单向通信</h3>
                 <hr>
               </div>
             </a>
@@ -575,11 +583,11 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="blog.yione.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg" itemprop="image" alt="10000" height="70" width="70"></a>
+          <a href="https://blog.yione.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg" itemprop="image" alt="10000" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="blog.yione.club" itemprop="url" rel="author">10000</a>
+            <a href="https://blog.yione.club" itemprop="url" rel="author">10000</a>
             </h3>
           </div>
         </div>

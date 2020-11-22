@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-10-22T07:56:09.518Z</updated>
+  <updated>2020-11-22T02:45:53.489Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,80 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用httpd搭建代理服务器</title>
+    <link href="/2020/11/07/%E7%94%A8httpd%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>/2020/11/07/用httpd搭建代理服务器/</id>
+    <published>2020-11-07T02:43:17.000Z</published>
+    <updated>2020-11-22T02:45:53.489Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;教室不知道什么情况启动了访问控制，所有电脑都没网，但是投影机电脑有网，是另一个网络上的电脑，于是开始折腾搭建一个代理服务器&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css-loader中`~`的作用</title>
+    <link href="/2020/11/04/css-loader%E4%B8%AD-%E7%9A%84%E4%BD%9C%E7%94%A8/"/>
+    <id>/2020/11/04/css-loader中-的作用/</id>
+    <published>2020-11-04T02:43:06.000Z</published>
+    <updated>2020-11-04T03:37:21.063Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天学习Vue的时候，正好碰上了路径别名处理的问题，由于视频中的Vue-Cli的版本和我现在用的有些区别，所以配置的时候也是按照官方的配置来设置的&lt;/p&gt;
+&lt;h2 id=&quot;webpack别名&quot;&gt;&lt;a href=&quot;#webpack别名&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>win10多网卡带宽叠加(负载均衡)</title>
+    <link href="/2020/11/02/win10%E5%A4%9A%E7%BD%91%E5%8D%A1%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
+    <id>/2020/11/02/win10多网卡负载均衡/</id>
+    <published>2020-11-02T06:58:08.000Z</published>
+    <updated>2020-11-22T02:26:42.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;win10多网卡带宽叠加-负载均衡&quot;&gt;&lt;a href=&quot;#win10多网卡带宽叠加-负载均衡&quot; class=&quot;headerlink&quot; title=&quot;win10多网卡带宽叠加(负载均衡)&quot;&gt;&lt;/a&gt;win10多网卡带宽叠加(负载均衡)&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>跨域中的单向通信</title>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">sass监视文件自动编译 | 10000&#39;s blog</title>
+  <title itemprop="name">css-loader中`~`的作用 | 10000&#39;s blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -418,23 +418,23 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200923171034.webp);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200923171034.webp">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201104111410.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201104111410.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      sass监视文件自动编译</h1>
+      css-loader中`~`的作用</h1>
       <p class="entry-census">
         <span>
-          <a href="blog.yione.club">
+          <a href="https://blog.yione.club">
             <img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg">
           </a>
         </span>
         <span>
-          <a href="blog.yione.club">10000</a>
+          <a href="https://blog.yione.club">10000</a>
         </span>
         <span class="bull">
         ·</span>
-        2020-9-23<span class="bull">
+        2020-11-4<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -448,22 +448,34 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在学sass的时候朋友告诉我可以用 <code>node-sass</code> 使用 <code>node-sass sass文件路径 输出css文件路径 -w</code> 命令监视文件的变化自动编译文件，但是一直在全局环境下没成功安装上 <code>node-sass</code> 于是就想能不能用<code>npm</code>安装的<code>sass</code>直接监视文件变化，于是就找到了如下命令</p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>你已经通过<code>npm</code> 全局(或在项目中)安装好了 <code>sass</code></p>
-<h2 id="sass编译命令"><a href="#sass编译命令" class="headerlink" title="sass编译命令"></a>sass编译命令</h2><h4 id="sass编译一个文件："><a href="#sass编译一个文件：" class="headerlink" title="sass编译一个文件："></a>sass编译一个文件：</h4><p>命令：<code>sass 源scss文件路径:输出的css文件路径</code></p>
-<p>如：<code>sass main.scss:main.css</code></p>
-<h4 id="sass对一个文件进行监控编译"><a href="#sass对一个文件进行监控编译" class="headerlink" title="sass对一个文件进行监控编译"></a>sass对一个文件进行监控编译</h4><p>命令：<code>sass 源scss文件路径:输出的css文件路径 --watch</code></p>
-<p>如： <code>sass main.scss:main.css --watch</code></p>
-<p>sass将会监视mian.scss文件的变化并实时编译输出到指定位置的指定文件中</p>
-<h4 id="sass对文件夹进行监控编译"><a href="#sass对文件夹进行监控编译" class="headerlink" title="sass对文件夹进行监控编译"></a>sass对<strong>文件夹</strong>进行监控编译</h4><p>命令： <code>sass sass文件夹:css文件夹 --watch</code></p>
-<p>如：<code>sass ./sass:./css --watch</code></p>
-<p>sass将会监视当前目录下scss文件夹下的需要编译成css文件的scss文件并按照目录结构在css目录中生成相应的css文件</p>
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p><strong>亲测编译scss文件时含有中文目录不会报错哦(npm sass 版本： <a href="mailto:&#x73;&#97;&#115;&#115;&#x40;&#x31;&#46;&#50;&#x36;&#46;&#x31;&#x31;">&#x73;&#97;&#115;&#115;&#x40;&#x31;&#46;&#50;&#x36;&#46;&#x31;&#x31;</a>)</strong></p>
-<p>可以在 <code>package.json</code> 中的 <code>scripts</code> 加入类似以下配置</p>
-<pre><code class="json">&quot;scripts&quot;: {
-  &quot;sass&quot;: &quot;sass ./scss:./css --watch&quot;
-}</code></pre>
-<p>随后可以在项目中运行<code>npm run sass</code>  以启动 sass 对文件或目录的监控</p>
+          <p>今天学习Vue的时候，正好碰上了路径别名处理的问题，由于视频中的Vue-Cli的版本和我现在用的有些区别，所以配置的时候也是按照官方的配置来设置的</p>
+<h2 id="webpack别名"><a href="#webpack别名" class="headerlink" title="webpack别名"></a>webpack别名</h2><p>当我们导入自己的包或者一些资源文件时，通常需要根据当前目录来写相对路径，往往要写一堆<code>../</code> 如： <code>../assets/img/xxx.jpg</code> 此时webpack别名能有效解决这个问题:</p>
+<p>在vue.config.js中加入：</p>
+<pre><code class="js">
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      // 配置路径别名 不用每次都写层级
+      alias: {
+        &#39;@&#39;: resolve(&#39;src&#39;),
+        &#39;assets&#39;: resolve(&#39;src/assets&#39;),
+        &#39;components&#39;: resolve(&#39;src/components&#39;),
+        &#39;views&#39;: resolve(&#39;src/views&#39;)
+      }
+    }
+  }
+};
+</code></pre>
+<p>项目成功启动，但是发现图片资源并没有加载出来，有意思的是：组件引用并没有报错，但是组件中标签中的<code>src</code>路径都不对</p>
+<p>查了一翻资料终于找到了原因：</p>
+<h2 id="css-loader中的"><a href="#css-loader中的" class="headerlink" title="css-loader中的~"></a>css-loader中的<code>~</code></h2><p>css-loader<a href="https://github.com/webpack-contrib/css-loader#url" target="_blank" rel="noopener">官方文档</a>中这样写到：</p>
+<blockquote>
+<p>To import assets from a <code>node_modules</code> path (include <code>resolve.modules</code>) and for <code>alias</code>, prefix it with a <code>~</code>:</p>
+<pre><code>url(~module/image.png) =&gt; require(&#39;module/image.png&#39;)
+url(&#39;~module/image.png&#39;) =&gt; require(&#39;module/image.png&#39;)
+url(~aliasDirectory/image.png) =&gt; require(&#39;otherDirectory/image.png&#39;)</code></pre>
+</blockquote>
+<p>也就是说在别名前要使用 <code>~</code>让css-loader 识别为一个模块路径而不是相对路径</p>
 
         </div>
         <!-- .entry-content -->
@@ -495,15 +507,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2020/10/12/数据劫持中闭包的应用/" rel="prev">
+            <a href="/2020/11/07/用httpd搭建代理服务器/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200815163103.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200815163103.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201122104535.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201122104535.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                数据劫持中闭包的应用</h3>
+                用httpd搭建代理服务器</h3>
                 <hr>
               </div>
             </a>
@@ -513,15 +525,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2020/08/25/let没有变量提升吗/" rel="next">
+            <a href="/2020/11/02/win10多网卡负载均衡/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200917105106.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200917105106.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102154626.jpeg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201102154626.jpeg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                let没有变量提升吗</h3>
+                win10多网卡带宽叠加(负载均衡)</h3>
                 <hr>
               </div>
             </a>
@@ -575,11 +587,11 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="blog.yione.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg" itemprop="image" alt="10000" height="70" width="70"></a>
+          <a href="https://blog.yione.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg" itemprop="image" alt="10000" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="blog.yione.club" itemprop="url" rel="author">10000</a>
+            <a href="https://blog.yione.club" itemprop="url" rel="author">10000</a>
             </h3>
           </div>
         </div>

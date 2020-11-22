@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">sass监视文件自动编译 | 10000&#39;s blog</title>
+  <title itemprop="name">用httpd搭建代理服务器 | 10000&#39;s blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -418,23 +418,23 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200923171034.webp);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200923171034.webp">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201122104535.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201122104535.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      sass监视文件自动编译</h1>
+      用httpd搭建代理服务器</h1>
       <p class="entry-census">
         <span>
-          <a href="blog.yione.club">
+          <a href="https://blog.yione.club">
             <img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg">
           </a>
         </span>
         <span>
-          <a href="blog.yione.club">10000</a>
+          <a href="https://blog.yione.club">10000</a>
         </span>
         <span class="bull">
         ·</span>
-        2020-9-23<span class="bull">
+        2020-11-7<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -448,22 +448,74 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在学sass的时候朋友告诉我可以用 <code>node-sass</code> 使用 <code>node-sass sass文件路径 输出css文件路径 -w</code> 命令监视文件的变化自动编译文件，但是一直在全局环境下没成功安装上 <code>node-sass</code> 于是就想能不能用<code>npm</code>安装的<code>sass</code>直接监视文件变化，于是就找到了如下命令</p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>你已经通过<code>npm</code> 全局(或在项目中)安装好了 <code>sass</code></p>
-<h2 id="sass编译命令"><a href="#sass编译命令" class="headerlink" title="sass编译命令"></a>sass编译命令</h2><h4 id="sass编译一个文件："><a href="#sass编译一个文件：" class="headerlink" title="sass编译一个文件："></a>sass编译一个文件：</h4><p>命令：<code>sass 源scss文件路径:输出的css文件路径</code></p>
-<p>如：<code>sass main.scss:main.css</code></p>
-<h4 id="sass对一个文件进行监控编译"><a href="#sass对一个文件进行监控编译" class="headerlink" title="sass对一个文件进行监控编译"></a>sass对一个文件进行监控编译</h4><p>命令：<code>sass 源scss文件路径:输出的css文件路径 --watch</code></p>
-<p>如： <code>sass main.scss:main.css --watch</code></p>
-<p>sass将会监视mian.scss文件的变化并实时编译输出到指定位置的指定文件中</p>
-<h4 id="sass对文件夹进行监控编译"><a href="#sass对文件夹进行监控编译" class="headerlink" title="sass对文件夹进行监控编译"></a>sass对<strong>文件夹</strong>进行监控编译</h4><p>命令： <code>sass sass文件夹:css文件夹 --watch</code></p>
-<p>如：<code>sass ./sass:./css --watch</code></p>
-<p>sass将会监视当前目录下scss文件夹下的需要编译成css文件的scss文件并按照目录结构在css目录中生成相应的css文件</p>
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p><strong>亲测编译scss文件时含有中文目录不会报错哦(npm sass 版本： <a href="mailto:&#x73;&#97;&#115;&#115;&#x40;&#x31;&#46;&#50;&#x36;&#46;&#x31;&#x31;">&#x73;&#97;&#115;&#115;&#x40;&#x31;&#46;&#50;&#x36;&#46;&#x31;&#x31;</a>)</strong></p>
-<p>可以在 <code>package.json</code> 中的 <code>scripts</code> 加入类似以下配置</p>
-<pre><code class="json">&quot;scripts&quot;: {
-  &quot;sass&quot;: &quot;sass ./scss:./css --watch&quot;
-}</code></pre>
-<p>随后可以在项目中运行<code>npm run sass</code>  以启动 sass 对文件或目录的监控</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>教室不知道什么情况启动了访问控制，所有电脑都没网，但是投影机电脑有网，是另一个网络上的电脑，于是开始折腾搭建一个代理服务器</p>
+<h2 id="下载安装httpd"><a href="#下载安装httpd" class="headerlink" title="下载安装httpd"></a>下载安装httpd</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>在Apache官网中下载httpd，这里呢我选的是<a href="https://www.apachehaus.com/cgi-bin/download.plx" target="_blank" rel="noopener"><strong>Apache Haus</strong></a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201107105708.png" alt="image-20201107105700872"></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>解压后打开目录 <code>Apache24/conf</code> 先备份一份 <code>httpd.conf</code></p>
+<p>随后打开并编辑：</p>
+<ul>
+<li><p><code>Define SRVROOT</code> 后的路径改成你当前httpd的存放路径 如：<code>D:\Program Files\httpd-2.4.46-o111h-x64-vc15\Apache24</code></p>
+</li>
+<li><p>监听端口修改：修改成需要监听的ip和端口(只写端口的话自动监听localhost) 如：<code>Listen 176.20.98.92:8888</code></p>
+</li>
+<li><p>加载所需的模块(取消以下模块前的#)</p>
+<ul>
+<li><p>LoadModule access_compat_module modules/mod_access_compat.so</p>
+</li>
+<li><p>LoadModule lbmethod_bybusyness_module modules/mod_lbmethod_bybusyness.so</p>
+</li>
+<li><p>LoadModule lbmethod_byrequests_module modules/mod_lbmethod_byrequests.so</p>
+</li>
+<li><p>LoadModule lbmethod_bytraffic_module modules/mod_lbmethod_bytraffic.so</p>
+</li>
+<li><p>LoadModule lbmethod_heartbeat_module modules/mod_lbmethod_heartbeat.so</p>
+</li>
+<li><p>LoadModule proxy_module modules/mod_proxy.so</p>
+</li>
+<li><p>LoadModule proxy_connect_module modules/mod_proxy_connect.so</p>
+</li>
+<li><p>LoadModule proxy_ftp_module modules/mod_proxy_ftp.so</p>
+</li>
+<li><p>LoadModule proxy_html_module modules/mod_proxy_html.so</p>
+</li>
+<li><p>LoadModule proxy_http_module modules/mod_proxy_http.so</p>
+</li>
+<li><p>LoadModule xml2enc_module modules/mod_xml2enc.so</p>
+</li>
+</ul>
+</li>
+<li><p>注释掉ssl模块： #LoadModule ssl_module modules/mod_ssl.so</p>
+</li>
+<li><p>添加Proxy配置, 开启Apache正向代理并允许所有的请求可以访问代理：</p>
+<ul>
+<li><p>向文件结尾加入以下配置：</p>
+<pre><code>ProxyRequests On
+&lt;Proxy *&gt;
+  Require all granted
+&lt;/Proxy&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载后建议根据你的个人习惯解压放到相应的<code>软件文件夹</code>中，因为这个是需要被安装成系统服务的：</p>
+<p>进入httpd的bin目录(那个有httpd.exe的地方)以 <code>管理员权限</code>打开cmd，使用以下命令</p>
+<p>安装服务：<code>httpd -k install </code></p>
+<p>如果不用了要卸载：<code>httpd –k uninstall</code></p>
+<p>启动服务： <code>httpd -k start </code></p>
+<p>停止服务： <code>httpd -k stop</code></p>
+<p>重启服务： <code>httpd -k restart</code></p>
+<p>也可使用 <code>ApacheMonitor</code>图形界面进行服务器的启动与停止</p>
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>由于防火墙的限制，你很有可能在外部使用不了代理服务器，所以你需要做以下配置放行httpd.exe：</p>
+<p>以win10为例：</p>
+<p>设置 -&gt; 更新和安全 -&gt; windows安全中心 -&gt; 防火墙和网络保护 -&gt; 允许应用通过防火墙 -&gt; 更改设置 -&gt; 允许其他应用</p>
+<p>然后选择httpd的路径，将httpd.exe加入即可</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>启动后在浏览器或者系统中配置代理服务器即可</p>
+<h3 id="浏览器："><a href="#浏览器：" class="headerlink" title="浏览器："></a>浏览器：</h3><p>以火狐为例(谷歌浏览器自动应用系统代理)：打开选项，在搜索栏中搜索代理，进入配置如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201107112150.png" alt="image-20201107112150304"></p>
+<h3 id="系统代理："><a href="#系统代理：" class="headerlink" title="系统代理："></a>系统代理：</h3><p>以win10为例</p>
+<p>设置 -&gt; 网络和Internet -&gt; 代理 -&gt; 手动设置代理 -&gt; 打开使用代理服务器开关，填入ip和端口并<code>保存</code>即可</p>
+<p><strong>一定要保存！！！</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201107112443.png" alt="image-20201107112443335"></p>
 
         </div>
         <!-- .entry-content -->
@@ -492,36 +544,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/10/12/数据劫持中闭包的应用/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200815163103.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200815163103.webp">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                数据劫持中闭包的应用</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2020/08/25/let没有变量提升吗/" rel="next">
+            <a href="/2020/11/04/css-loader中-的作用/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200917105106.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20200917105106.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201104111410.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/BlogImg/20201104111410.png">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                let没有变量提升吗</h3>
+                css-loader中`~`的作用</h3>
                 <hr>
               </div>
             </a>
@@ -575,11 +610,11 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="blog.yione.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg" itemprop="image" alt="10000" height="70" width="70"></a>
+          <a href="https://blog.yione.club" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/0x2710-10000/ImageBag@master/img/custom/avatar.jpg" itemprop="image" alt="10000" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="blog.yione.club" itemprop="url" rel="author">10000</a>
+            <a href="https://blog.yione.club" itemprop="url" rel="author">10000</a>
             </h3>
           </div>
         </div>
